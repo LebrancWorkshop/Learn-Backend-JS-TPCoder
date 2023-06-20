@@ -1,5 +1,7 @@
 /**
  * -- Javascript Array Method. --
+ * -- Source: https://www.linkedin.com/posts/connectwithyounus_js-array-activity-7072074729553051648-8KW2?utm_source=share&utm_medium=member_desktop --
+ *
  * toString(): string -> Returns a string with all the array values, separated by commas.
  * join(seperator?: string): string -> Returns a new string by concatenating all of the elements in an array by specified separator.
  * pop(): T | undefined -> Removes the last element from an array and returns that element.
@@ -17,10 +19,10 @@
  * lastIndexOf(searchElement: T, fromIndex?: number): number `-> Count from the end index (second argument that is optional) and Return the last index of specified value in an array. and return -1 if not found. (from right to left).
  * find() -> Return the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
  * findIndex() -> Return the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating no element passed the test.
- * includes()
- * entries()
- * every()
- * some()
+ * includes() -> Determine whether an array includes a certain value among its entries, returning true or false as appropriate.
+ * entries() -> Return a new Array Iterator object that contains the key/value pairs for each index in the array.
+ * every() -> Return true if all elements in an array pass a test (provided as a function), otherwise false.
+ * some() -> Return true if at least one element in an array pass a test (provided as a function), otherwise false.
  * fill()
  * copywithin()
  * valueOf()
@@ -98,4 +100,19 @@ console.log(numbers.findIndex((element) => element < 3));
 console.log(numbers.findIndex((element) => element < 0));
 console.log(numbers);
 console.log('==========');
-
+console.log(numbers.includes(3));
+console.log(numbers.includes(10));
+console.log('==========');
+for(const [i, v] of numbers.entries()) {
+  console.log(`Index: ${i}, Value: ${v}`);
+}
+console.log('==========');
+console.log(numbers.every((element) => element < 10));
+console.log(numbers.every((element) => element < 3));
+console.log(numbers);
+console.log('==========');
+console.log(numbers.some((element) => element < 10));
+console.log(numbers.some((element) => element < 3));
+console.log(numbers.some((element) => element > 10));
+console.log(numbers);
+console.log('==========');
