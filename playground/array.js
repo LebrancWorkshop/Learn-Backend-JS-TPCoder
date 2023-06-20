@@ -10,13 +10,13 @@
  * concat(...items: ConcatArray<T>()): T[] -> Concatenate (Join) two or more arrays, return a new array.
  * sort(compareFn?: (a: T, b: T) => number): this -> Sort the elements of an array in place and return the sorted array.
  * splice(start: number, deleteCount: number, ...items: T[]): T[] -> Add or remove items to or from an array, and return the removed item(s).
- * slice()
- * reverse()
- * isArray()
- * indexOf()
- * lastIndexOf()
- * find()
- * findIndex()
+ * slice(start?: number, end?: number): T[] -> Extract a section of an array and return a new array.
+ * reverse(): T[] -> Reverse the order of the elements of an array in place and return the reversed array (Overwrite on init array).
+ * isArray(arg: any): arg is any[] -> Return true if the argument is an array, false otherwise.
+ * indexOf(searchElement: T, fromIndex?: number): number -> Count from the start index (second argument that is optional) and Return the first index of specified value in an array. and return -1 if not found. (from left to right)
+ * lastIndexOf(searchElement: T, fromIndex?: number): number `-> Count from the end index (second argument that is optional) and Return the last index of specified value in an array. and return -1 if not found. (from right to left).
+ * find() -> Return the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
+ * findIndex() -> Return the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating no element passed the test.
  * includes()
  * entries()
  * every()
@@ -68,3 +68,34 @@ const gangList = ["Yagimucha", "Zenyama", "Egonohanazemasu"];
 console.log(`Splice: ${gangList.splice(1, 1, "Kanagawa")}`);
 console.log(gangList);
 console.log('==========');
+const scoreList = [1,2,3,4,7];
+console.log(`Slice: ${scoreList.slice(1, 3)}`);
+console.log(scoreList);
+console.log('==========');
+const score = [1,2,3,0];
+console.log(`Reverse: ${score.reverse()}`);
+console.log(score);
+console.log('==========');
+const arr = [1,2,3,7,8];
+const word = "Rider";
+const user = { name: 'Gaia' };
+console.log(Array.isArray(arr));
+console.log(Array.isArray(word));
+console.log(Array.isArray(user));
+console.log('==========');
+const device = ["Tablet", "PC", "Smartphone"];
+console.log(`Index of: ${device.indexOf("PC", 0)}`);
+console.log('==========');
+const flow = ["Table", "Chart", "Graph", "Table", "Code", "Diagram"];
+console.log(`Last Index of: ${flow.lastIndexOf("Table", 2)}`);
+console.log('==========');
+const numbers = [1, 2, 3, 4, 5];
+console.log(numbers.find((element) => element >= 3));
+console.log(numbers.find((element) => element >= 10));
+console.log(numbers);
+console.log('==========');
+console.log(numbers.findIndex((element) => element < 3));
+console.log(numbers.findIndex((element) => element < 0));
+console.log(numbers);
+console.log('==========');
+
