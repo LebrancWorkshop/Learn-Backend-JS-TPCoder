@@ -23,15 +23,15 @@
  * entries() -> Return a new Array Iterator object that contains the key/value pairs for each index in the array.
  * every() -> Return true if all elements in an array pass a test (provided as a function), otherwise false.
  * some() -> Return true if at least one element in an array pass a test (provided as a function), otherwise false.
- * fill()
- * copywithin()
- * valueOf()
- * forEach()
- * map()
- * filter()
- * reduce()
- * reduceRight()
- * from()
+ * fill() -> Overwrite the value of all elements in an array from a start index (second argument that is optional) to an end index (third argument that is optional) with a static value (first argument) (overwrite init array).
+ * copywithin() -> Copy array elements within the array, to and from specified positions.
+ * valueOf() -> Return the array itself and does not change the init array.
+ * forEach() -> Excute a provided function once for each array element.
+ * map() ->
+ * filter() -> Create a new array with all elements that pass the test implemented by the provided function.
+ * reduce() ->
+ * reduceRight() ->
+ * from() ->
  */
 
 const stringArray = ["First", "Second", "Third", "Fourth", "Fifth"];
@@ -116,3 +116,26 @@ console.log(numbers.some((element) => element < 3));
 console.log(numbers.some((element) => element > 10));
 console.log(numbers);
 console.log('==========');
+const books = ["The Adventure of Pud", "Penguin, The Good History", "Zod with Programmer", "Alchemist", "Arcane Pyro"];
+console.log(books.fill("Book Fillers", 3, -1));
+console.log(books);
+console.log('==========');
+const spells = ["Firaga", "Icesage", "Thundra", "Cure", "Haste", "Foggy", "Agile"];
+console.log(spells.copyWithin(2, 1, 4));
+console.log(spells);
+console.log('==========');
+console.log(spells.valueOf());
+console.log(spells);
+console.log('==========');
+spells.forEach((spell, index, spells) => {
+  spells[index] = spell.toUpperCase();
+})
+console.log(spells);
+console.log('==========');
+const okrs = ["Reading Books", "Cooking Foods", "Playing Games"]; 
+console.log('==========');
+console.log(Array.from("Spells"));
+console.log("Spells".split(""));
+console.log(Array.from("Spells") === "Spells".split("")); // false
+console.log('==========');
+
