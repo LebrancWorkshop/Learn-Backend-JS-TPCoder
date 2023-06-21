@@ -29,7 +29,7 @@
  * forEach() -> Excute a provided function once for each array element.
  * map() ->
  * filter() -> Create a new array with all elements that pass the test implemented by the provided function.
- * reduce() ->
+ * reduce() -> 
  * reduceRight() ->
  * from() ->
  */
@@ -132,7 +132,7 @@ spells.forEach((spell, index, spells) => {
 })
 console.log(spells);
 console.log('==========');
-const okrs = ["Reading Books", "Cooking Foods", "Playing Games"]; 
+const okrs = ["Reading Books", "Cooking Foods", "Playing Games"];
 console.log('==========');
 console.log(Array.from("Spells"));
 console.log("Spells".split(""));
